@@ -61,6 +61,7 @@ h1, h2, h3, p {
 }
 
 .header {
+    height: 50px;
     padding-top: 9px;
     padding-bottom: 9px;
     position: relative;
@@ -104,18 +105,20 @@ h1, h2, h3, p {
     display: block;
     width: 24px;
     height: 24px;
+    transition: color .3s ease-in-out;
+    color: #fff;
 }
 
-.social__link_fb {
-    background-image: url('../img/fb.svg');
+.social__link_fb:hover {
+    color: #1a73e8;
 }
 
-.social__link_twitter {
-    background-image: url('../img/twitter.svg');
+.social__link_twitter:hover {
+    color: rgb(29, 155, 240);
 }
 
-.social__link_instagram {
-    background-image: url('../img/instagram.svg');
+.social__link_instagram:hover {
+    color: #db0ad1;
 }
 
 .burger {
@@ -188,6 +191,7 @@ h1, h2, h3, p {
 
 .main {
     flex-grow: 1;
+    position: relative;
 }
 
 .main_index {
@@ -210,6 +214,9 @@ h1, h2, h3, p {
 }
 
 .footer {
+    height: 70px;
+    position: relative;
+    z-index: 500;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -231,6 +238,61 @@ h1, h2, h3, p {
     color: #6A6A6A;
 }
 
+.main_slider {
+    height: calc(100% - 120px);
+
+}
+
+.slider-main {
+    height: 100%;
+}
+
+.slider-main__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 400;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 15px;
+    background-color: #000;
+    min-height: 144px;
+    padding-top: 12px;
+}
+
+.pagination__arrow {
+    display: block;
+    margin: 0 auto 20px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-top: 6px solid #fff;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.pagination__arrow:hover {
+    border-top-color: #E90000;
+}
+
+*.slider-thumbs {
+    max-width: 820px;
+}
+
+.slider-main__video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 @media (max-width: 1024px) {
     .mute {
@@ -244,6 +306,7 @@ h1, h2, h3, p {
 
 @media (max-width: 768px) {
     .header {
+        min-height: 50px;
         display: flex;
         align-items: center;
         padding-left: 20px;
@@ -343,8 +406,16 @@ h1, h2, h3, p {
         }
     
     .footer {
+        height: 50px;
         font-size: 6px;
         line-height: 7px;
-        
+        }
+
+    .pagination__arrow {
+        margin-bottom: 6px;
+    }
+
+    .pagination {
+        min-height: 80px;
     }
 }
